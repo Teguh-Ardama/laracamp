@@ -32,9 +32,6 @@ class UserController extends Controller
         ];
 
         // $user = User::firstOrCreate(['email' => $data['email']], $data);
-        // Auth::login($user, true);
-
-        // $user = User::firstOrCreate(['email' => $data['email']], $data);
         $user = User::whereEmail($data['email'])->first();
         if (!$user) {
             $user = User::create($data);
