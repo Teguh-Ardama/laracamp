@@ -31,7 +31,12 @@
                                     </p>
                                 </td>
                                 <td>
-                                    <strong>${{$checkout->Camp->price}}k</strong>
+                                    <strong>
+                                        Rp. {{$checkout->total}}
+                                        @if ($checkout->discount_id)
+                                            <span class="badge bg-success">Disc {{$checkout->discount_percentage}}%</span>
+                                        @endif
+                                    </strong>
                                 </td>
                                 <td>
                                     <strong>{{$checkout->payment_status}}</strong>
@@ -42,7 +47,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="https://wa.me/081296278960?text=Hi, saya ingin bertanya tentang kelas {{$checkout->Camp->title}}" class="btn btn-primary">
+                                    <a href="https://wa.me/08xxxxxxxx?text=Hi, saya ingin bertanya tentang kelas {{$checkout->Camp->title}}" class="btn btn-primary">
                                         Contact Support
                                     </a>
                                 </td>
